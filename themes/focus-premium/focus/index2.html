@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Focus - Bootstrap Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link href="./vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link href="./vendor/chartist/css/chartist.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <!-- Google Charts -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.theme.default.min.css">
+    <link href="./vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../dist/jquery.vmap.js"></script>
+    <script type="text/javascript" src="../dist/maps/jquery.vmap.usa.js" charset="utf-8"></script>
+    <style>
+        .my-custom-scrollbar {
+            position: relative;
+            height: 375px;
+            overflow: auto;
+        }
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+        #customer-table {
+            height: 200px;
+        }
+        #notes {
+            position: relative;
+            height: 298px;
+            overflow: auto;
+            display: block;
+        }
+        .tdl-content {
+            height: 300px;
+        }
+        .admin-custom-scrollbar {
+            position: relative;
+            height: 320px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="logo-abbr" src="./images/logo.png" alt="">
+                <img class="logo-compact" src="./images/logo-text.png" alt="">
+                <img class="brand-title" src="./images/logo-text.png" alt="">
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="search_bar dropdown">
+                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <i class="mdi mdi-magnify"></i>
+                                </span>
+                                <div class="dropdown-menu p-0 m-0">
+                                    <form>
+                                        <input id="myPage" class="form-control" type="search" placeholder="Search" aria-label="Search..">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-bell"></i>
+                                    <div class="pulse-css"></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="list-unstyled">
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-user"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-shopping-cart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="danger"><i class="ti-bookmark"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-heart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-image"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                    </ul>
+                                    <a class="all-notification" href="#">See all notifications <i
+                                            class="ti-arrow-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-account"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="./app-profile.html" class="dropdown-item">
+                                        <i class="icon-user"></i>
+                                        <span class="ml-2">Profile </span>
+                                    </a>
+                                    <a href="./email-inbox.html" class="dropdown-item">
+                                        <i class="icon-envelope-open"></i>
+                                        <span class="ml-2">Inbox </span>
+                                    </a>
+                                    <a href="./page-login.html" class="dropdown-item">
+                                        <i class="icon-key"></i>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="quixnav">
+            <div class="quixnav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label first">Main Menu</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./index2.html" id="home" style="color: white;">Home</a></li>
+                            <li><a href="./registerAdmins.html" id="register-admin" style="color: white;">Admins</a></li>
+                            <li><a href="./items.html" style="color: white;">Items</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Apps</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./app-profile.html">Profile</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="./email-compose.html">Compose</a></li>
+                                    <li><a href="./email-inbox.html">Inbox</a></li>
+                                    <li><a href="./email-read.html">Read</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./app-calender.html">Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-chart-bar-33"></i><span class="nav-text">Charts</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./chart-flot.html">Flot</a></li>
+                            <li><a href="./chart-morris.html">Morris</a></li>
+                            <li><a href="./chart-chartjs.html">Chartjs</a></li>
+                            <li><a href="./chart-chartist.html">Chartist</a></li>
+                            <li><a href="./chart-sparkline.html">Sparkline</a></li>
+                            <li><a href="./chart-peity.html">Peity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Components</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./ui-accordion.html">Accordion</a></li>
+                            <li><a href="./ui-alert.html">Alert</a></li>
+                            <li><a href="./ui-badge.html">Badge</a></li>
+                            <li><a href="./ui-button.html">Button</a></li>
+                            <li><a href="./ui-modal.html">Modal</a></li>
+                            <li><a href="./ui-button-group.html">Button Group</a></li>
+                            <li><a href="./ui-list-group.html">List Group</a></li>
+                            <li><a href="./ui-media-object.html">Media Object</a></li>
+                            <li><a href="./ui-card.html">Cards</a></li>
+                            <li><a href="./ui-carousel.html">Carousel</a></li>
+                            <li><a href="./ui-dropdown.html">Dropdown</a></li>
+                            <li><a href="./ui-popover.html">Popover</a></li>
+                            <li><a href="./ui-progressbar.html">Progressbar</a></li>
+                            <li><a href="./ui-tab.html">Tab</a></li>
+                            <li><a href="./ui-typography.html">Typography</a></li>
+                            <li><a href="./ui-pagination.html">Pagination</a></li>
+                            <li><a href="./ui-grid.html">Grid</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-plug"></i><span class="nav-text">Plugins</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./uc-select2.html">Select 2</a></li>
+                            <li><a href="./uc-nestable.html">Nestedable</a></li>
+                            <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
+                            <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
+                            <li><a href="./uc-toastr.html">Toastr</a></li>
+                            <li><a href="./map-jqvmap.html">Jqv Map</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                                class="nav-text">Widget</span></a></li>
+                    <li class="nav-label">Forms</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-form"></i><span class="nav-text">Forms</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./form-element.html">Form Elements</a></li>
+                            <li><a href="./form-wizard.html">Wizard</a></li>
+                            <li><a href="./form-editor-summernote.html">Summernote</a></li>
+                            <li><a href="form-pickers.html">Pickers</a></li>
+                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Table</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
+                            <li><a href="table-datatable-basic.html">Datatable</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-label">Extra</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-single-copy-06"></i><span class="nav-text">Pages</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./page-register.html">Register</a></li>
+                            <li><a href="./page-login.html">Login</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="./page-error-400.html">Error 400</a></li>
+                                    <li><a href="./page-error-403.html">Error 403</a></li>
+                                    <li><a href="./page-error-404.html">Error 404</a></li>
+                                    <li><a href="./page-error-500.html">Error 500</a></li>
+                                    <li><a href="./page-error-503.html">Error 503</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./page-lock-screen.html">Lock Screen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body" id="body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Admins</div>
+                                    <div class="stat-digit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="#9ACD32" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                          </svg><div id="count-admin"></div></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Customers</div>
+                                    <div class="stat-digit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="#4B0082" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                            <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                                          </svg><div id="count-customer"></div></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-primary w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Orders</div>
+                                    <div class="stat-digit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="#FFA500" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                                          </svg><div id="count-orders"></div></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Profit</div>
+                                    <div class="stat-digit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="red" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                            <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                                          </svg><div id="sum-profit"></div></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Saless Ratio (%)</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-8">
+                                        <div id="chart_div">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="m-t-10">
+                                    <h4 class="card-title">Customer Feedback</h4>
+                                    <h2 class="mt-3" id="count-feedback"></h2>
+                                </div>
+                                <div class="widget-card-circle mt-5 mb-5" id="info-circle-card">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="blue" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                        <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                      </svg>
+                                </div>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-1">
+                                </ul>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-2">
+                                </ul>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-3">
+                                </ul>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-4">
+                                </ul>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-5">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#"><h4 class="card-title">Orders</h4></a>
+                            </div>
+                            <div class="ml-3 mr-3 mt-3">
+                                <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                            </div>
+                            <div class="card-body">
+                                <div id="customer-table" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                                    <table class="table student-data-table m-t-20">
+                                        <thead>
+                                            <tr style="color: black;">
+                                                <th>Name</th>
+                                                <th>Phone Number</th>
+                                                <th>Location</th>
+                                                <th>Details Order</th>
+                                                <th>Price</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="order-table" style="color: darkslategray;">
+                                            <!--<span class="badge badge-warning">Pending</span>-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 col-xxl-6 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Orders Status</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="widget-timeline">
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-badge primary"></div>
+                                            <a class="timeline-panel text-muted" href="javascript:void(0)" id="tt-click">
+                                                <h6 class="m-t-5">تم التوصيل</h6>
+                                                <span id="tt">0 Orders</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge warning">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="javascript:void(0)" id="qt-click">
+                                                <h6 class="m-t-5">قيد التوصيل</h6>
+                                                <span id="qt">0 Orders</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge danger">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="javascript:void(0)" id="qn-click">
+                                                <h6 class="m-t-5">قيد الانتظار</h6>
+                                                <span id="qn">0 Orders</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge success">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="javascript:void(0)" id="r-click">
+                                                <h6 class="m-t-5">راجع</h6>
+                                                <span id="r">0 Orders</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="timeline-badge warning">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="javascript:void(0)" id="o-click">
+                                                <h6 class="m-t-5">عالق</h6>
+                                                <span id="o">0 Orders</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-xxl-6 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Customer Notes</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="recent-comment m-t-15" id="notes">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Quantities</h4>
+                            </div>
+                            <div class="card-body px-0">
+                                <div class="todo-list">
+                                    <div class="tdl-holder">
+                                        <div class="tdl-content wrapper-scroll-y my-custom-scrollbar widget-todo2 mr-4">
+                                            <ul id="quantities_list">
+
+                                            </ul>
+                                        </div>
+                                        <div class="px-4">
+                                            <input id="items-quantity" type="text" class="tdl-new form-control" placeholder="Search..">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 col-xxl-6 col-lg-6 col-md-12">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="social-graph-wrapper widget-facebook">
+                                        <span class="s-icon"><i class="fa fa-facebook"></i></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">89</span> k</h4>
+                                                <p class="m-0">Friends</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">119</span> k</h4>
+                                                <p class="m-0">Followers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="social-graph-wrapper widget-linkedin">
+                                        <span class="s-icon"><i class="fa fa-linkedin"></i></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">89</span> k</h4>
+                                                <p class="m-0">Friends</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">119</span> k</h4>
+                                                <p class="m-0">Followers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="social-graph-wrapper widget-googleplus">
+                                        <span class="s-icon"><i class="fa fa-google-plus"></i></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">89</span> k</h4>
+                                                <p class="m-0">Friends</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">119</span> k</h4>
+                                                <p class="m-0">Followers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="social-graph-wrapper widget-twitter">
+                                        <span class="s-icon"><i class="fa fa-twitter"></i></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">89</span> k</h4>
+                                                <p class="m-0">Friends</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">119</span> k</h4>
+                                                <p class="m-0">Followers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="year-calendar"></div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card" style="height: 460px;">
+                            <div class="card-header">
+                                <h4 class="card-title">Admins</h4>
+                            </div>
+                            <div class="ml-3 mr-3 mt-3">
+                                <input class="form-control" id="myAdmins" type="text" placeholder="Search..">
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive table-wrapper-scroll-y admin-custom-scrollbar">
+                                    <table class="table student-data-table m-t-20">
+                                        <thead>
+                                            <tr style="color: black;">
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Phone Number</th>
+                                                <th>Premission</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="get-admins" style="color: darkslategray;">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="chart_div">
+
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <div class="modal fade" id="tt-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table student-data-table m-t-20">
+                            <thead>
+                                <tr style="color: black;">
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Location</th>
+                                    <th>Details Order</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tt-table" style="color: darkslategray;">
+                                <!--<span class="badge badge-warning">Pending</span>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="qt-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="customer-table" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table student-data-table m-t-20">
+                            <thead>
+                                <tr style="color: black;">
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Location</th>
+                                    <th>Details Order</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="qt-table" style="color: darkslategray;">
+                                <!--<span class="badge badge-warning">Pending</span>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="qn-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="customer-table" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table student-data-table m-t-20">
+                            <thead>
+                                <tr style="color: black;">
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Location</th>
+                                    <th>Details Order</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="qn-table" style="color: darkslategray;">
+                                <!--<span class="badge badge-warning">Pending</span>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="r-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="customer-table" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table student-data-table m-t-20">
+                            <thead>
+                                <tr style="color: black;">
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Location</th>
+                                    <th>Details Order</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="r-table" style="color: darkslategray;">
+                                <!--<span class="badge badge-warning">Pending</span>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="o-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="customer-table" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table student-data-table m-t-20">
+                            <thead>
+                                <tr style="color: black;">
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Location</th>
+                                    <th>Details Order</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="o-table" style="color: darkslategray;">
+                                <!--<span class="badge badge-warning">Pending</span>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="./vendor/global/global.min.js"></script>
+    <script src="./js/quixnav-init.js"></script>
+    <script src="./js/custom.min.js"></script>
+
+
+
+
+    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="./vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <script src="./vendor/gaugeJS/dist/gauge.min.js"></script>
+
+    <!--  flot-chart js -->
+    <script src="./vendor/flot/jquery.flot.js"></script>
+    <script src="./vendor/flot/jquery.flot.resize.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="./vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="./vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="./vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="./vendor/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="MyJSFiles/details.js"></script>
+
+    <script src="./vendor/global/global.min.js"></script>
+    <script src="./js/quixnav-init.js"></script>
+    <script src="./js/custom.min.js"></script>
+    <script src="./MyJSFiles/getOrdersAndAdmins.js"></script>
+    <script src="./MyJSFiles/countStatusOrders.js"></script>
+    <script src="./MyJSFiles/feedback-note.js"></script>
+    <script src="./MyJSFiles/getItems.js"></script>
+    <script src="./MyJSFiles/MyCharts.js"></script>
+
+    <script src="./vendor/chartist/js/chartist.min.js"></script>
+
+    <script src="./vendor/moment/moment.min.js"></script>
+    <script src="./vendor/pg-calendar/js/pignose.calendar.min.js"></script>
+
+
+    <script src="./js/dashboard/dashboard-2.js"></script>
+    <!-- Circle progress -->
+
+</body>
+<script>
+    $(document).ready(function(){
+        $('#tt-click').click(function(){
+            $("#tt-modal").modal()
+        })
+        $('#tn-click').click(function(){
+            $("#tn-modal").modal()
+        })
+        $('#qt-click').click(function(){
+            $("#qt-modal").modal()
+        })
+        $('#r-click').click(function(){
+            $("#r-modal").modal()
+        })
+        $('#o-click').click(function(){
+            $("#o-modal").modal()
+        })
+    });
+    $(document).ready(function(){
+        document.getElementById("myInput").value = "";
+        document.getElementById("myAdmins").value = "";
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#order-table tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+        $("#myAdmins").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#get-admins tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+        $("#items-quantity").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#quantities_list li").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+</html>

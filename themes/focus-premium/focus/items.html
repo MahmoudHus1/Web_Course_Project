@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Focus - Bootstrap Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link href="./vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link href="./vendor/chartist/css/chartist.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <!-- Google Charts -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./vendor/select2/css/select2.min.css">
+    <link href="./vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../dist/jquery.vmap.js"></script>
+    <script type="text/javascript" src="../dist/maps/jquery.vmap.usa.js" charset="utf-8"></script>
+    <style>
+        .my-custom-scrollbar {
+            position: relative;
+            height: 375px;
+            overflow: auto;
+        }
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+        #customer-table {
+            height: 200px;
+        }
+        #notes {
+            position: relative;
+            height: 298px;
+            overflow: auto;
+            display: block;
+        }
+        .tdl-content {
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="logo-abbr" src="./images/logo.png" alt="">
+                <img class="logo-compact" src="./images/logo-text.png" alt="">
+                <img class="brand-title" src="./images/logo-text.png" alt="">
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="search_bar dropdown">
+                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <i class="mdi mdi-magnify"></i>
+                                </span>
+                                <div class="dropdown-menu p-0 m-0">
+                                    <form>
+                                        <input id="myPage" class="form-control" type="search" placeholder="Search" aria-label="Search..">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-bell"></i>
+                                    <div class="pulse-css"></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="list-unstyled">
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-user"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-shopping-cart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="danger"><i class="ti-bookmark"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-heart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-image"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                    </ul>
+                                    <a class="all-notification" href="#">See all notifications <i
+                                            class="ti-arrow-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-account"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="./app-profile.html" class="dropdown-item">
+                                        <i class="icon-user"></i>
+                                        <span class="ml-2">Profile </span>
+                                    </a>
+                                    <a href="./email-inbox.html" class="dropdown-item">
+                                        <i class="icon-envelope-open"></i>
+                                        <span class="ml-2">Inbox </span>
+                                    </a>
+                                    <a href="./page-login.html" class="dropdown-item">
+                                        <i class="icon-key"></i>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="quixnav">
+            <div class="quixnav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label first">Main Menu</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./index2.html" id="home" style="color: white;">Home</a></li>
+                            <li><a href="./registerAdmins.html" id="register-admin" style="color: white;">Register Admin</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"
+                                style="color: white;">Items</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="javascript:void()" id="home-item-link" style="color: white;">Products</a></li>
+                                    <li><a href="javascript:void()" id="add-item-link" style="color: white;">Add items</a></li>
+                                    <li><a href="javascript:void()" id="update-item-link" style="color: white;">Update Items</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Apps</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./app-profile.html">Profile</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="./email-compose.html">Compose</a></li>
+                                    <li><a href="./email-inbox.html">Inbox</a></li>
+                                    <li><a href="./email-read.html">Read</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./app-calender.html">Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-chart-bar-33"></i><span class="nav-text">Charts</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./chart-flot.html">Flot</a></li>
+                            <li><a href="./chart-morris.html">Morris</a></li>
+                            <li><a href="./chart-chartjs.html">Chartjs</a></li>
+                            <li><a href="./chart-chartist.html">Chartist</a></li>
+                            <li><a href="./chart-sparkline.html">Sparkline</a></li>
+                            <li><a href="./chart-peity.html">Peity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Components</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./ui-accordion.html">Accordion</a></li>
+                            <li><a href="./ui-alert.html">Alert</a></li>
+                            <li><a href="./ui-badge.html">Badge</a></li>
+                            <li><a href="./ui-button.html">Button</a></li>
+                            <li><a href="./ui-modal.html">Modal</a></li>
+                            <li><a href="./ui-button-group.html">Button Group</a></li>
+                            <li><a href="./ui-list-group.html">List Group</a></li>
+                            <li><a href="./ui-media-object.html">Media Object</a></li>
+                            <li><a href="./ui-card.html">Cards</a></li>
+                            <li><a href="./ui-carousel.html">Carousel</a></li>
+                            <li><a href="./ui-dropdown.html">Dropdown</a></li>
+                            <li><a href="./ui-popover.html">Popover</a></li>
+                            <li><a href="./ui-progressbar.html">Progressbar</a></li>
+                            <li><a href="./ui-tab.html">Tab</a></li>
+                            <li><a href="./ui-typography.html">Typography</a></li>
+                            <li><a href="./ui-pagination.html">Pagination</a></li>
+                            <li><a href="./ui-grid.html">Grid</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-plug"></i><span class="nav-text">Plugins</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./uc-select2.html">Select 2</a></li>
+                            <li><a href="./uc-nestable.html">Nestedable</a></li>
+                            <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
+                            <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
+                            <li><a href="./uc-toastr.html">Toastr</a></li>
+                            <li><a href="./map-jqvmap.html">Jqv Map</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                                class="nav-text">Widget</span></a></li>
+                    <li class="nav-label">Forms</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-form"></i><span class="nav-text">Forms</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./form-element.html">Form Elements</a></li>
+                            <li><a href="./form-wizard.html">Wizard</a></li>
+                            <li><a href="./form-editor-summernote.html">Summernote</a></li>
+                            <li><a href="form-pickers.html">Pickers</a></li>
+                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Table</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
+                            <li><a href="table-datatable-basic.html">Datatable</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-label">Extra</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-single-copy-06"></i><span class="nav-text">Pages</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./page-register.html">Register</a></li>
+                            <li><a href="./page-login.html">Login</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="./page-error-400.html">Error 400</a></li>
+                                    <li><a href="./page-error-403.html">Error 403</a></li>
+                                    <li><a href="./page-error-404.html">Error 404</a></li>
+                                    <li><a href="./page-error-500.html">Error 500</a></li>
+                                    <li><a href="./page-error-503.html">Error 503</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./page-lock-screen.html">Lock Screen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body mt-5">
+            <div class="container-fluid">
+                <!-- row -->
+                <div id="sh-items">
+                <div class="row" id="category">
+
+                </div>
+                <hr>
+                <div class="row">
+                        <div class="col-lg-12 col-sm-12">
+                            <div class="card mr-5 ml-5 ml-sm-4">
+                                <div class="stat-widget-two card-body">
+                                    <div class="stat-content">
+                                        <div class="stat-text"><strong id="all-text">All Items</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="all">
+                            
+                        </div>
+                </div>
+                <div class="row" id="p-i">
+                    <div class="col-xl-3 col-lg-12 col-md-12" id="div_products">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mail-list">
+                                    <a href="javascript:void()" id="category_name" style="text-align:center;" class="list-group-item active"></a>
+                                    <div id="products">
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9">
+                            <div class="row" id="items">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- ADD ITEMS -->
+                    <div class="row" id="a-item">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Add Items</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-validation">
+                                        <form class="form-item">
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-itemname">Name
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="text" class="form-control" id="val-itemname" name="val-itemname" placeholder="Enter an item name..">
+                                                            <small id="itemname-small" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-model">Model
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="text" class="form-control" id="val-model" name="val-model" placeholder="Enter an item model..">
+                                                        </div>
+                                                    </div>
+                                                    <fieldset class="form-group">
+                                                        <div class="row">
+                                                            <label class="col-form-label col-lg-4 col-sm-12 pt-0">Category <span
+                                                                class="text-danger">*</span></label>
+                                                            <div class="col-lg-6 col-sm-10" id="category-list">
+                                                                
+                                                                <div><small id="small-category-radio" class="text-danger"></small></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-sm-12"></div>
+                                                            <div class="col-lg-6">
+                                                                <div class="input-group mt-2">
+                                                                    <input type="text" id="name-new-category" class="form-control" placeholder="Add category..">
+                                                                    <div class="input-group-append">
+                                                                        <button id="add-category" class="btn btn-primary" type="button">+</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                    <hr>
+                                                    <fieldset class="form-group">
+                                                        <div class="row">
+                                                            <label class="col-form-label col-lg-4 col-sm-12 pt-0">Brand <span
+                                                                class="text-danger">*</span></label>
+                                                            <div class="col-lg-6 col-sm-10" id="brand-list">
+                                                                
+                                                                <div><small id="small-brand-radio" class="text-danger"></small></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-sm-12"></div>
+                                                            <div class="col-lg-6">
+                                                                <div class="input-group mt-2">
+                                                                    <input type="text" id="name-new-brand" class="form-control" placeholder="Add brand..">
+                                                                    <div class="input-group-append">
+                                                                        <button id="add-brand" class="btn btn-primary" type="button">+</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-quantity">Quantity
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="number" min="0" class="form-control" id="val-quantity" name="val-quantity"
+                                                            onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="quantity..">
+                                                            <small id="quantity-small" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-price">Price
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="number" min="0" class="form-control" id="val-price" name="val-price"
+                                                            onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="price..">
+                                                            <small id="price-small" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-offer">Offer
+                                                        </label>
+                                                        <div class="col-lg-6 input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" style="background-color: #6A5ACD; color: white;">%</span>
+                                                            </div>
+                                                            <input type="number" min="0" max="100" class="form-control" id="val-offer" placeholder="Offer.." 
+                                                            onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" value="0">
+                                                            
+                                                        </div>
+                                                        <div class="col-lg-4"></div>
+                                                        <div class="col-lg-6"><small id="offer-small" class="text-danger"></small></div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-description">Description
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <textarea class="form-control" id="val-description" name="val-description" rows="5" placeholder="description.."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-img">Image
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="file" class="form-control" id="val-img" name="val-img">
+                                                            <small id="image-small" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-8 ml-auto">
+                                                            <button type="button" id="submit" class="btn btn-primary">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="e-item">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Edit Items</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-validation">
+                                        <form class="form-item">
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-itemname">Name
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <select id="single-select">
+                                                            </select>
+                                                            <div><small class="text-danger" id="edit-itemname-small"></small></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-itemname">Edit name
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="text" class="form-control" id="val-new-itemname" name="val-new-itename" placeholder="Enter an item name..">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-model">Edit model
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="text" class="form-control" id="val-new-model" name="val-new-model" placeholder="Enter an item model..">
+                                                        </div>
+                                                    </div>
+                                                    <fieldset class="form-group">
+                                                        <div class="row">
+                                                            <label class="col-form-label col-lg-4 col-sm-12 pt-0">Edit category</label>
+                                                            <div class="col-lg-6 col-sm-10" id="edit-category-list">
+                                                                
+                                                                <div><small id="small-edit-category-radio" class="text-danger"></small></div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                    <hr>
+                                                    <fieldset class="form-group">
+                                                        <div class="row">
+                                                            <label class="col-form-label col-lg-4 col-sm-12 pt-0">Edit brand</label>
+                                                            <div class="col-lg-6 col-sm-10" id="edit-brand-list">
+                                                                
+                                                                <div><small id="small-edit-brand-radio" class="text-danger"></small></div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-quantity">Edit quantity</span>
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="number" min="0" class="form-control" id="val-new-quantity" name="val-new-quantity"
+                                                            onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="quantity..">
+                                                            <small id="quantity-small" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-price">Edit price</span>
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="number" min="0" class="form-control" id="val-new-price" name="val-new-price"
+                                                            onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="price..">
+                                                            <small id="price-small" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-offer">Edit Offer
+                                                        </label>
+                                                        <div class="col-lg-6 input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" style="background-color: #6A5ACD; color: white;">%</span>
+                                                            </div>
+                                                            <input type="number" min="0" max="100" class="form-control" id="val-new-offer" placeholder="Offer.." 
+                                                            onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" value="0">
+                                                            
+                                                        </div>
+                                                        <div class="col-lg-4"></div>
+                                                        <div class="col-lg-6"><small id="new-offer-small" class="text-danger"></small></div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-description">Edit description
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <textarea class="form-control" id="val-new-description" name="val-new-description" rows="5" placeholder="description.."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val-img">Edit image</span>
+                                                        </label>
+                                                        <div class="col-lg-6">
+                                                            <input type="file" class="form-control" id="val-new-img" name="val-new-img">
+                                                            <small id="new-image-small" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-8 ml-auto">
+                                                            <button type="button" id="submit-edit" class="btn btn-primary">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+    <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+
+
+    <!-- Vectormap -->
+    <script src="./vendor/raphael/raphael.min.js"></script>
+
+
+    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="./vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <script src="./vendor/gaugeJS/dist/gauge.min.js"></script>
+
+    <!--  flot-chart js -->
+    <script src="./vendor/flot/jquery.flot.js"></script>
+    <script src="./vendor/flot/jquery.flot.resize.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="./vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="./vendor/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="MyJSFiles/addItems.js"></script>
+    <script src="MyJSFiles/updateItemsInformation.js"></script>
+
+    <script src="./vendor/select2/js/select2.full.min.js"></script>
+    <script src="./js/plugins-init/select2-init.js"></script>
+
+    <script src="./vendor/global/global.min.js"></script>
+    <script src="./js/custom.min.js"></script>
+
+</body>
+<script>
+    $(document).ready(function(){
+        $('#sh-items').show();
+        $('#a-item').hide();
+        $('#e-item').hide();
+    })
+    $('#home-item-link').click(function(){
+        $('#sh-items').show();
+        $('#a-item').hide();
+        $('#e-item').hide();
+        $('#all').show();
+        $('#p-i').hide();
+        $('#all-text').text('All Items');
+        ri();
+    })
+    $('#add-item-link').click(function(){
+        $('#sh-items').hide();
+        $('#a-item').show();
+        $('#e-item').hide();
+    })
+    $('#update-item-link').click(function(){
+        $('#sh-items').hide();
+        $('#a-item').hide();
+        $('#e-item').show();
+    })
+    function ri() {
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    } else {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            if (this.responseText == '0') {
+                $('#all').append('<div class="stat-text">'+'<strong>'+'Not found items'+'</strong>'+'</div>');
+            }
+            else {
+                var myObj = JSON.parse(this.responseText);
+                var lengthJSON = Object.keys(myObj).length;
+                var i = 0;
+                $('#all').empty();
+                if (myObj.status == '4') {
+                    swal({
+                        icon: "error",
+                        title: "error in connect",
+                    });
+                    console.log("error in connect");
+                }
+                else {
+                    while (lengthJSON > 0) {
+                        $('#all').append('<div class="card ml-3 mb-3 ml-sm-4" style="width: 15rem;">'
+                        +'<img class="card-img-top" src="'+myObj[i].img+'" alt="image" style="width:100%;height:15rem;">'
+                        +'<div class="card-body">'
+                        +'<h5 class="card-title">'+myObj[i].name+'</h5>'
+                        +'<p class="card-text">'+myObj[i].description+'</p>'
+                        +'<button class="btn btn-primary" disabled>'+myObj[i].price+'$'+'</button>'
+                        +'</div>'
+                        +'</div>'
+                        );
+                        lengthJSON--;
+                        i++;
+                    }
+                }
+            }
+        }
+    }
+    ajax.open("get", "phpFiles/getItems.php");
+    ajax.send();
+}
+    // Get items
+$(document).ready(function() {
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    } else {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            if (this.responseText == '0') {
+                $('#all').append('<div class="stat-text">'+'<strong>'+'Not found items'+'</strong>'+'</div>');
+            }
+            else {
+                var myObj = JSON.parse(this.responseText);
+                var lengthJSON = Object.keys(myObj).length;
+                var i = 0;
+                $('#all').empty();
+                if (myObj.status == '4') {
+                    swal({
+                        icon: "error",
+                        title: "error in connect",
+                    });
+                    console.log("error in connect");
+                }
+                else {
+                    while (lengthJSON > 0) {
+                        $('#all').append('<div class="card ml-3 mb-3 ml-sm-4" style="width: 15rem;">'
+                        +'<img class="card-img-top" src="'+myObj[i].img+'" alt="image" style="width:100%;height:15rem;">'
+                        +'<div class="card-body">'
+                        +'<h5 class="card-title">'+myObj[i].name+'</h5>'
+                        +'<p class="card-text">'+myObj[i].description+'</p>'
+                        +'<button class="btn btn-primary" disabled>'+myObj[i].price+'$'+'</button>'
+                        +'</div>'
+                        +'</div>'
+                        );
+                        lengthJSON--;
+                        i++;
+                    }
+                }
+            }
+        }
+    }
+    ajax.open("get", "phpFiles/getItems.php");
+    ajax.send();
+});
+$(document).ready(function() {
+    var myObj;
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    } else {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            myObj = JSON.parse(this.responseText);
+            var lengthJSON = Object.keys(myObj).length;
+            var i = 0;
+            $('#items').empty();
+            if (myObj.status == '4') {
+                swal({
+                    icon: "error",
+                    title: "error in connect",
+                });
+                console.log("error in connect");
+            }
+            else {
+                while (lengthJSON > 0) {
+                    var name = myObj[i].name;
+                    name = name.charAt(0).toUpperCase() + name.slice(1);
+                    $('#category').append('<div class="col-lg-3 col-sm-6">'
+                        +'<div class="card" style="background-color: #6A5ACD;">'
+                            +'<div class="stat-widget-two card-body">'
+                                +'<div class="stat-content">'
+                                    +'<div class="stat-text">'
+                                        +'<a class="category" onclick="items(this.id)" href="#" id="'+myObj[i].name+'" style="color: #FFFFFF;">'
+                                            +'<strong>'+name+'</strong>'+'</a>'
+                                    +'</div>'
+                                    +'</div>'
+                                    +'</div>'
+                                    +'</div>'
+                                    +'</div>');
+                    lengthJSON--;
+                    i++;
+                }
+            }
+        }
+    }
+    ajax.open("get", "phpFiles/getCategory.php");
+    ajax.send();
+});
+$(document).ready(function(){
+    $('#div_products').hide();
+});
+function items(categoryID) {
+    $('#all').hide();
+    console.log(categoryID);
+    var name = categoryID.charAt(0).toUpperCase() + categoryID.slice(1);
+    $('#all-text').text(name);
+    $('#p-i').show();
+    $('#div_products').show();
+    $('#category_name').text(name);
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    } else {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            var myObj = JSON.parse(this.responseText);
+            var lengthJSON = Object.keys(myObj).length;
+            var i = 0;
+            if (myObj.status == '4') {
+                swal({
+                    icon: "error",
+                    title: "error in connect",
+                });
+                console.log("error in connect");
+            }
+            else {
+                $('#products').empty();
+                while (lengthJSON > 0) {
+                    if (categoryID == myObj[i].cat_name) {
+                        var nameBrand = myObj[i].brand_name;
+                        nameBrand = nameBrand.charAt(0).toUpperCase() + nameBrand.slice(1);
+                        if (myObj[i].brand_name != 'other') {
+                        $('#products').append('<a href="javascript:void()" style="text-align:center;" class="list-group-item" onclick="getItems(this.id)" id="'+categoryID+'-'+nameBrand+'">'
+                            +nameBrand+'</a>');
+                        }
+                    }
+                    lengthJSON--;
+                    i++;
+                }
+            }
+        }
+    }
+    ajax.open("get", "phpFiles/getProduct.php");
+    ajax.send();
+    allItemsOfCategory(categoryID);
+}
+function allItemsOfCategory(categoryID) {
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    } else {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            var myObj = JSON.parse(this.responseText);
+            var lengthJSON = Object.keys(myObj).length;
+            var i = 0;
+            $('#items').empty();
+            if (myObj.status == '4') {
+                swal({
+                    icon: "error",
+                    title: "error in connect",
+                });
+                console.log("error in connect");
+            }
+            else {
+                while (lengthJSON > 0) {
+                    if (categoryID == myObj[i].cat_name) {
+                        $('#items').append('<div class="card mr-2 ml-2 mb-3" style="width: 15rem;">'
+                        +'<img class="card-img-top" src="'+myObj[i].img+'" alt="image">'
+                        +'<div class="card-body">'
+                        +'<h5 class="card-title">'+myObj[i].item_name+'</h5>'
+                        +'<p class="card-text">'+myObj[i].description+'</p>'
+                        +'<button class="btn btn-primary" disabled>'+myObj[i].price+'$'+'</button>'
+                        +'</div>'
+                        +'</div>'
+                        );
+                    }
+                    lengthJSON--;
+                    i++;
+                }
+            }
+        }
+    }
+    ajax.open("get", "phpFiles/getProduct.php");
+    ajax.send();
+}
+function getItems(brandID) {
+    brandID = brandID.toLowerCase();
+    var str = brandID.split('-');
+    brandID = str[1];
+    var categoryName = str[0];
+    console.log(brandID+' '+categoryName);
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    } else {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            var myObj = JSON.parse(this.responseText);
+            var lengthJSON = Object.keys(myObj).length;
+            var i = 0;
+            $('#items').empty();
+            if (myObj.status == '4') {
+                swal({
+                    icon: "error",
+                    title: "error in connect",
+                });
+                console.log("error in connect");
+            }
+            else {
+                while (lengthJSON > 0) {
+                    if (brandID == myObj[i].brand_name && categoryName == myObj[i].cat_name) {
+                        $('#items').append('<div class="card mr-2 ml-2 mb-3" style="width: 15rem;">'
+                        +'<img class="card-img-top" src="'+myObj[i].img+'" alt="image">'
+                        +'<div class="card-body">'
+                        +'<h5 class="card-title">'+myObj[i].item_name+'</h5>'
+                        +'<p class="card-text">'+myObj[i].description+'</p>'
+                        +'<button class="btn btn-primary" disabled>'+myObj[i].price+'$'+'</button>'
+                        +'</div>'
+                        +'</div>'
+                        );
+                    }
+                    lengthJSON--;
+                    i++;
+                }
+            }
+        }
+    }
+    ajax.open("get", "phpFiles/getProduct.php");
+    ajax.send();
+}
+</script>
+</html>

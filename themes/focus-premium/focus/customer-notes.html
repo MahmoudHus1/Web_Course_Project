@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Focus - Bootstrap Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link href="./vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link href="./vendor/chartist/css/chartist.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+
+    <div class="row" id="note">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Notes</h4>
+                </div>
+                <div class="card-body">
+                    <div class="current-progress">
+                        <div class="progress-content py-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="progress-text">Iphone</div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="current-progressbar">
+                                        <div class="progress">
+                                            <div id="iphone" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-content py-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="progress-text">Samsung</div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="current-progressbar">
+                                        <div class="progress">
+                                            <div id="samsung" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-content py-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="progress-text">Hawawi</div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="current-progressbar">
+                                        <div class="progress">
+                                            <div id="hawawi" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-content py-2">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="progress-text">Mi</div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="current-progressbar">
+                                        <div class="progress">
+                                            <div id="mi" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="./vendor/global/global.min.js"></script>
+    <script src="./js/quixnav-init.js"></script>
+    <script src="./js/custom.min.js"></script>
+
+    <script src="./vendor/chartist/js/chartist.min.js"></script>
+
+    <script src="./vendor/moment/moment.min.js"></script>
+    <script src="./vendor/pg-calendar/js/pignose.calendar.min.js"></script>
+
+
+    <script src="./js/dashboard/dashboard-2.js"></script>
+    <!-- Circle progress -->
+
+</body>
+<script>
+    // ----- FEEDBACK NOTE -----
+$(document).ready(function(){
+    console.log('feedback-note');
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    } else {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            var myObj = JSON.parse(this.responseText);
+            var lengthJSON = Object.keys(myObj).length;
+            var i = 0;
+            if (myObj.status == '4') {
+                swal({
+                    icon: "error",
+                    title: "error in connect",
+                });
+                console.log("error in connect");
+            }
+            else {
+                while (lengthJSON > 0) {
+                    $('#note').append('<div class="col-lg-4">'
+                    +'<div class="card">'
+                    +'<div class="card-header">'
+                    +'<h4 class="card-title">'+'Note'+'</h>'
+                    +'</div>'
+                    +'<div class="card-body">'
+                    +'<div class="testimonial-widget-one p-17">'
+                    +'<div class="testimonial-widget-one owl-carousel owl-theme" id="feedback-note">'
+                    +'<div class="item">'
+                    +'<div class="testimonial-content">'
+                    +'<div class="testimonial-text">'
+                    +'<i class="fa fa-quote-left">'+'</i>'+' '+myObj[i].note+'<i class="fa fa-quote-right">'+'</i>'
+                    +'</div>'
+                    +'<div class="media">'
+                    +'<div class="media-body">'
+                    +'<div class="testimonial-author" id="d1">'+myObj[i].name+'</div>'
+                    +'<div class="testimonial-author-position" id="d2">'+myObj[i].email+'</div>'
+                    +'</div>'
+                    +'<img class="testimonial-author-img ml-3" src="./images/avatar/1.png" alt="" />'
+                    +'</div>'
+                    +'</div>'
+                    +'</div>'
+                    +'</div>'
+                    +'</div>'
+                    +'</div>'
+                    +'</div>'
+                    +'</div>'
+                    );
+                    $('#d1').append(myObj[i].name);
+                    $('#d2').append(myObj[i].eamil);
+                    lengthJSON--;
+                    i++;
+                }
+            }
+        }
+    }
+    ajax.open("get", "phpFiles/feedback-note.php");
+    ajax.send();
+});
+</script>
+</html>

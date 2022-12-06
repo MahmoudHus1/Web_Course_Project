@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Focus - Bootstrap Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="h-100" id="body">
+    <div class="authincation h-100">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <h4 class="text-center mb-4">Sign in your account</h4>
+                                        <div class="form-group">
+                                            <label><strong>Email</strong></label>
+                                            <input type="email" id="email" class="form-control" placeholder="hello@example.com">
+                                            <div><small id="email-small"></small></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Password</strong></label>
+                                            <input type="password" id="password" class="form-control" placeholder="password">
+                                            <div><small id="pass-small"></small></div>
+                                        </div>
+                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                                            <div class="form-group">
+                                                <div class="form-check ml-2">
+                                                    <input class="form-check-input" type="checkbox" id="basic_checkbox_1">
+                                                    <label class="form-check-label" for="basic_checkbox_1">Remember me</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <a href="./forgot-password.html">Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" onclick="login()" class="btn btn-primary btn-block">Sign me in</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="./MyJSFiles/resetPassword.js"></script>
+
+</body>
+<script>
+    $(document).ready(function() {
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+    });
+    $('#email').keyup(function() {
+        $('#email-small').text('');
+    });
+    $('#password').keyup(function() {
+        $('#pass-small').text('');
+    });
+    function login() {
+        var bool = true;
+        var email = document.getElementById('email').value;
+        var pass = document.getElementById('password').value;
+        var url = 'page-login.html';
+        if (email == '') {
+            $('#email-small').css('color','red');
+            $('#email-small').text('enter email');
+            bool = false;
+        }
+        if (bool == true) {
+        var formData = new FormData();
+        formData.append("email", email);
+        formData.append("password", pass);
+        if (window.XMLHttpRequest) {
+            ajax = new XMLHttpRequest();
+        } else {
+            ajax = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                var myObj = JSON.parse(this.responseText);
+                if (myObj.status == '4') {
+                    swal({
+                        icon: "error",
+                        title: "error in connect",
+                    });
+                    console.log("error in connect");
+                }
+                else {
+                    if (myObj.status == '5') {
+                        $('#email-small').css('color','red');
+                        $('#email-small').text('user not found');
+                        console.log("user not found");
+                    }
+                    else if (myObj.status == '6') {
+                        $('#pass-small').css('color','red');
+                        $('#pass-small').text('incorrect password');
+                        console.log("incorrect password");
+                    }
+                    else {
+                        document.getElementById('email').value = '';
+                        document.getElementById('password').value = '';
+                        console.log("success");
+                        
+                        window.location = "./index2.html";
+                    }
+                }
+            }
+        }
+        ajax.open("post", "phpFiles/page-login.php");
+        ajax.send(formData);
+    }
+    }
+</script>
+</html>

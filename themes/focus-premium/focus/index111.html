@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Focus - Bootstrap Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.theme.default.min.css">
+    <link href="./vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../dist/jquery.vmap.js"></script>
+    <script type="text/javascript" src="../dist/maps/jquery.vmap.usa.js" charset="utf-8"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target="#card-vmap131" data-offset="50" id="bb">
+
+    
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div>Admins</div>
+                                    <div class="stat-digit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="#9ACD32" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                          </svg><div id="count-admin"></div></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Customers</div>
+                                    <div class="stat-digit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="#4B0082" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                            <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                                          </svg><div id="count-customer"></div></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-primary w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Orders</div>
+                                    <div class="stat-digit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="#FFA500" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                                          </svg><div id="count-orders"></div></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Profit</div>
+                                    <div class="stat-digit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="red" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                            <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                                          </svg><div id="sum-profit"></div></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Sales Overview</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-8">
+                                        <div id="morris-bar-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="m-t-10">
+                                    <h4 class="card-title">Customer Feedback</h4>
+                                    <h2 class="mt-3" id="count-feedback"></h2>
+                                </div>
+                                <div class="widget-card-circle mt-5 mb-5" id="info-circle-card">
+                                    <i class="ti-control-shuffle pa"></i>
+                                </div>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-1">
+                                </ul>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-2">
+                                </ul>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-3">
+                                </ul>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-4">
+                                </ul>
+                                <ul class="widget-line-list m-b-15" id="c-r-f-5">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="Javascript:void(0);" id='mobile-link'><h4 class="card-title">Mobiles</h4></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="current-progress">
+                                    <div class="progress-content py-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Iphone</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div id="iphone" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content py-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Samsung</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div id="samsung" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content py-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Hawawi</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div id="hawawi" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content py-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Mi</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div id="mi" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="Javascript:void(0);" id='laptops-link'><h4 class="card-title">Laptops</h4></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="current-progress">
+                                    <div class="progress-content py-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Mac</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div id="mac" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content py-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">MSI</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div id="msi" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content py-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Lenovo</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div id="lenovo" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-content py-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="progress-text">Dell</div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="current-progressbar">
+                                                    <div class="progress">
+                                                        <div id="dell" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><a href="Javascript:void(0);" id="notes-link" style="color: black;">Customer Notes</a></h4>
+                            </div>
+                            <div class="card-body px-0">
+                                <div class="todo-list">
+                                    <div class="tdl-holder">
+                                        <div class="tdl-content widget-todo mr-4">
+                                            <ul id="todo_list m-2">
+                                                <div class="card-body" id="notes">
+                                                    
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Sales ratio in USA</h4>
+                            </div>
+                            <div class="card-body">
+                                <div style="color: black;"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#DC143C" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                  </svg></i> Sales ratio less than 35%</div>
+                                  <div style="color: black;"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#FFD700" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                  </svg></i> Sales ratio 35%-65%</div>
+                                  <div style="color: black;"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#008000" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                      <circle cx="8" cy="8" r="8"/>
+                                    </svg></i> Sales ratio more than 65%</div>
+                                <div id="vmap131" style="width: 474px; height: 400px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">New Orders</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th>Product</th>
+                                                <th>quantity</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Lew Shawon</td>
+                                                <td><span>Dell-985</span></td>
+                                                <td><span>456 pcs</span></td>
+                                                <td><span class="badge badge-success">Done</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Lew Shawon</td>
+                                                <td><span>Asus-565</span></td>
+                                                <td><span>456 pcs</span></td>
+                                                <td><span class="badge badge-warning">Pending</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>lew Shawon</td>
+                                                <td><span>Dell-985</span></td>
+                                                <td><span>456 pcs</span></td>
+                                                <td><span class="badge badge-success">Done</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>lew Shawon</td>
+                                                <td><span>Dell-985</span></td>
+                                                <td><span>456 pcs</span></td>
+                                                <td><span class="badge badge-success">Done</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Lew Shawon</td>
+                                                <td><span>Asus-565</span></td>
+                                                <td><span>456 pcs</span></td>
+                                                <td><span class="badge badge-warning">Pending</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>lew Shawon</td>
+                                                <td><span>Dell-985</span></td>
+                                                <td><span>456 pcs</span></td>
+                                                <td><span class="badge badge-success">Done</span></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="round-img">
+                                                        <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td>Lew Shawon</td>
+                                                <td><span>Asus-565</span></td>
+                                                <td><span>456 pcs</span></td>
+                                                <td><span class="badge badge-warning">Pending</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xxl-6 col-xl-4 col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Product Sold</h4>
+                                <div class="card-action">
+                                    <div class="dropdown custom-dropdown">
+                                        <div data-toggle="dropdown">
+                                            <i class="ti-more-alt"></i>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#">Option 1</a>
+                                            <a class="dropdown-item" href="#">Option 2</a>
+                                            <a class="dropdown-item" href="#">Option 3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart py-4">
+                                    <canvas id="sold-product"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-6 col-lg-6 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Todo</h4>
+                            </div>
+                            <div class="card-body px-0">
+                                <div class="todo-list">
+                                    <div class="tdl-holder">
+                                        <div class="tdl-content widget-todo mr-4">
+                                            <ul id="todo_list m-2">
+                                                <div class="card-body">
+                                                    <li><div class="testimonial-widget-one p-17 mb-1 border">
+                                                        <div class="testimonial-widget-one" id="feedback-note">
+                                                            <div class="item">
+                                                                <div class="testimonial-content">
+                                                                    <div class="testimonial-text" id="cf1">omaromaromaromar
+                                                                        omaromaromaromar
+                                                                        omaromaromaromar
+                                                                    </div>
+                                                                    <div class="media">
+                                                                        <div class="media-body">
+                                                                            <div class="testimonial-author" id="cn1">omar</div>
+                                                                            <div class="testimonial-author-position" id="ce1">omar@gmail.com</div>
+                                                                        </div>
+                                                                        <img class="testimonial-author-img ml-3" src="./images/avatar/1.png" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </li>
+                                                    <div class="testimonial-widget-one p-17 border">
+                                                        <div class="testimonial-widget-one" id="feedback-note">
+                                                            <div class="item">
+                                                                <div class="testimonial-content">
+                                                                    <div class="testimonial-text" id="cf1">omaromaromaromar
+                                                                    </div>
+                                                                    <div class="media">
+                                                                        <div class="media-body">
+                                                                            <div class="testimonial-author" id="cn1">omar</div>
+                                                                            <div class="testimonial-author-position" id="ce1">omar@gmail.com</div>
+                                                                        </div>
+                                                                        <img class="testimonial-author-img ml-3" src="./images/avatar/1.png" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                        <div class="px-4">
+                                            <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                            <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="social-graph-wrapper widget-linkedin">
+                                        <span class="s-icon"><i class="fa fa-linkedin"></i></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">89</span> k</h4>
+                                                <p class="m-0">Friends</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">119</span> k</h4>
+                                                <p class="m-0">Followers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="social-graph-wrapper widget-googleplus">
+                                        <span class="s-icon"><i class="fa fa-google-plus"></i></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">89</span> k</h4>
+                                                <p class="m-0">Friends</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">119</span> k</h4>
+                                                <p class="m-0">Followers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="social-graph-wrapper widget-twitter">
+                                        <span class="s-icon"><i class="fa fa-twitter"></i></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">89</span> k</h4>
+                                                <p class="m-0">Friends</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                                <h4 class="m-1"><span class="counter">119</span> k</h4>
+                                                <p class="m-0">Followers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="./vendor/global/global.min.js"></script>
+    <script src="./js/quixnav-init.js"></script>
+    <script src="./js/custom.min.js"></script>
+
+
+    <!-- Vectormap -->
+    <script src="./vendor/raphael/raphael.min.js"></script>
+    <script src="./vendor/morris/morris.min.js"></script>
+
+
+    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="./vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <script src="./vendor/gaugeJS/dist/gauge.min.js"></script>
+
+    <!--  flot-chart js -->
+    <script src="./vendor/flot/jquery.flot.js"></script>
+    <script src="./vendor/flot/jquery.flot.resize.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="./vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="./vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="./vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="./vendor/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="MyJSFiles/details.js"></script>
+    <script src="MyJSFiles/sales-ratio-items.js"></script>
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+</body>
+<script>
+    jQuery(document).ready(function () {
+      jQuery('#vmap131').vectorMap({
+        map: 'usa_en',
+        backgroundColor: '#white',
+        enableZoom: true,
+        showTooltip: true,
+        selectedColor: null,
+        hoverColor: '#87CEFA',
+        colors: {
+          fl: '#FFD700',
+          ut: '#FFD700',
+          ks: '#FFD700',
+          or: '#008000',
+          co: '#DC143C'
+        },
+        onRegionClick: function(event, code, region){
+          event.preventDefault();
+        }
+      });
+    });
+    $(document).ready(function(){
+        console.log('feedback-note');
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    } else {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            var myObj = JSON.parse(this.responseText);
+            var lengthJSON = Object.keys(myObj).length;
+            var i = 0;
+            if (myObj.status == '4') {
+                swal({
+                    icon: "error",
+                    title: "error in connect",
+                });
+                console.log("error in connect");
+            }
+            else {
+                while (lengthJSON > 0) {
+        $('#notes').append('<li>'
+            +'<div class="testimonial-widget-one p-17 mb-1 border">'
+            +'<div class="testimonial-widget-one">'
+            +'<div class="item">'
+            +'<div class="testimonial-content">'
+            +'<div class="testimonial-text" id="cf1">'
+                +'<i class="fa fa-quote-left">'+'</i>'+' '+myObj[i].note+'<i class="fa fa-quote-right">'+'</i>'
+            +'</div>'
+            +'<div class="media">'
+            +'<div class="media-body">'
+            +'<div class="testimonial-author" id="cn1">'
+            +myObj[i].name
+            +'</div>'
+            +'<div class="testimonial-author-position" id="ce1">'
+                +myObj[i].email
+            +'</div>'
+            +'</div>'
+            +'<img class="testimonial-author-img ml-3" src="./images/avatar/1.png" alt="" />'
+            +'</div>'
+            +'</div>'
+            +'</div>'
+            +'</div>'
+            +'</div>'
+            +'</li>'
+            );
+            lengthJSON--;
+            i++;
+                }
+            }
+        }
+    }
+    ajax.open("get", "phpFiles/feedback-note.php");
+    ajax.send();
+    });
+    $('#mobile-link').click(function(){
+    $('#note').replaceWith(
+        '<div class="container-fluid">'
+        +'<div class="row">'
+        +"<h1>"+"omar"+"</h1>"
+        +'</div>'
+        +'</div>'
+    );
+    });
+    $('#laptops-link').click(function(e){
+    e.preventDefault();
+        $('#p').replaceWith(function(){
+            location.replace("customer-notes.html");
+        });
+    });
+    $('#register-admin').click(function(){
+        $.get( "index3.html", function(data) {
+            $( "#body" ).html(data);
+        });
+    });
+  </script>
+</html>
