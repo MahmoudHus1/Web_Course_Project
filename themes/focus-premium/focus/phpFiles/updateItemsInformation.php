@@ -19,7 +19,7 @@ if (isset($_POST['newModel'])) {
     $newModel = $_POST['newModel'];
     $sql = 'UPDATE items SET sub_cat_name = ? WHERE name = ?';
     $res = $conn -> prepare($sql);
-    $res -> bind_param('ss',$newModel,$itemNam);
+    $res -> bind_param('ss',$newModel,$itemName);
     $res -> execute();
     
     if($conn -> error) {
@@ -32,7 +32,7 @@ if (isset($_POST['newModel'])) {
     $newModel = $_POST['newModel'];
     $sql = 'UPDATE items SET sub_cat_name = ? WHERE name = ?';
     $res = $conn -> prepare($sql);
-    $res -> bind_param('ss',$newModel,$itemNam);
+    $res -> bind_param('ss',$newModel,$itemName);
     $res -> execute();
     
     if($conn -> error) {
@@ -41,37 +41,12 @@ if (isset($_POST['newModel'])) {
         return 0;
     }
 }
-if (isset($_POST['newCategory'])) {
-    $newCategory = $_POST['newCategory'];
-    $sql = 'UPDATE items SET cat_ID = ? WHERE name = ?';
-    $res = $conn -> prepare($sql);
-    $res -> bind_param('is',$catID,$itemNam);
-    $res -> execute();
-    
-    if($conn -> error) {
-        $myJSON = '{"status":"4"}';
-        echo $myJSON;
-        return 0;
-    }
-}
-if (isset($_POST['newBrand'])) {
-    $newBrand = $_POST['newBrand'];
-    $sql = 'UPDATE items SET brand_ID = ? WHERE name = ?';
-    $res = $conn -> prepare($sql);
-    $res -> bind_param('is',$newBrand,$itemNam);
-    $res -> execute();
-    
-    if($conn -> error) {
-        $myJSON = '{"status":"4"}';
-        echo $myJSON;
-        return 0;
-    }
-}
+
 if (isset($_POST['newQuantity'])) {
     $newQuantity = $_POST['newQuantity'];
     $sql = 'UPDATE items SET quantity = ? WHERE name = ?';
     $res = $conn -> prepare($sql);
-    $res -> bind_param('is',$newQuantity,$itemNam);
+    $res -> bind_param('is',$newQuantity,$itemName);
     $res -> execute();
     
     if($conn -> error) {
@@ -82,9 +57,9 @@ if (isset($_POST['newQuantity'])) {
 }
 if (isset($_POST['newPrice'])) {
     $newPrice = $_POST['newPrice'];
-    $sql = 'UPDATE items SET newPrice = ? WHERE name = ?';
+    $sql = 'UPDATE items SET price = ? WHERE name = ?';
     $res = $conn -> prepare($sql);
-    $res -> bind_param('ss',$newPrice,$itemNam);
+    $res -> bind_param('ss',$newPrice,$itemName);
     $res -> execute();
     
     if($conn -> error) {
@@ -95,9 +70,9 @@ if (isset($_POST['newPrice'])) {
 }
 if (isset($_POST['newPrice'])) {
     $newPrice = $_POST['newPrice'];
-    $sql = 'UPDATE items SET newPrice = ? WHERE name = ?';
+    $sql = 'UPDATE items SET price = ? WHERE name = ?';
     $res = $conn -> prepare($sql);
-    $res -> bind_param('ss',$newPrice,$itemNam);
+    $res -> bind_param('ss',$newPrice,$itemName);
     $res -> execute();
     
     if($conn -> error) {
@@ -123,7 +98,7 @@ if (isset($_POST['newDescription'])) {
     $newDescription = $_POST['newDescription'];
     $sql = 'UPDATE items SET description = ? WHERE name = ?';
     $res = $conn -> prepare($sql);
-    $res -> bind_param('ss',$newDescription,$itemNam);
+    $res -> bind_param('ss',$newDescription,$itemName);
     $res -> execute();
     
     if($conn -> error) {

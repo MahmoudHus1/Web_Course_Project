@@ -502,13 +502,13 @@
                                                         <label class="col-lg-4 col-form-label" for="val-img">Image
                                                             <span class="text-danger">*</span>
                                                         </label>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-12">
                                                             <input type="file" class="form-control" id="val-img" name="val-img">
                                                             <small id="image-small" class="text-danger"></small>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <div class="col-lg-8 ml-auto">
+                                                        <div class="col-lg-12 ml-auto">
                                                             <button type="button" id="submit" class="btn btn-primary">Submit</button>
                                                         </div>
                                                     </div>
@@ -530,12 +530,12 @@
                                     <div class="form-validation">
                                         <form class="form-item">
                                             <div class="row">
-                                                <div class="col-xl-6">
+                                                <div class="col-xl-12">
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="val-itemname">Name
                                                             <span class="text-danger">*</span>
                                                         </label>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-12">
                                                             <select id="single-select">
                                                             </select>
                                                             <div><small class="text-danger" id="edit-itemname-small"></small></div>
@@ -544,42 +544,21 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="val-itemname">Edit name
                                                         </label>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-12">
                                                             <input type="text" class="form-control" id="val-new-itemname" name="val-new-itename" placeholder="Enter an item name..">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="val-model">Edit model
                                                         </label>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-12">
                                                             <input type="text" class="form-control" id="val-new-model" name="val-new-model" placeholder="Enter an item model..">
                                                         </div>
-                                                    </div>
-                                                    <fieldset class="form-group">
-                                                        <div class="row">
-                                                            <label class="col-form-label col-lg-4 col-sm-12 pt-0">Edit category</label>
-                                                            <div class="col-lg-6 col-sm-10" id="edit-category-list">
-                                                                
-                                                                <div><small id="small-edit-category-radio" class="text-danger"></small></div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                    <hr>
-                                                    <fieldset class="form-group">
-                                                        <div class="row">
-                                                            <label class="col-form-label col-lg-4 col-sm-12 pt-0">Edit brand</label>
-                                                            <div class="col-lg-6 col-sm-10" id="edit-brand-list">
-                                                                
-                                                                <div><small id="small-edit-brand-radio" class="text-danger"></small></div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-xl-6">
+                                                <div class="col-xl-12">
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="val-quantity">Edit quantity</span>
                                                         </label>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-12">
                                                             <input type="number" min="0" class="form-control" id="val-new-quantity" name="val-new-quantity"
                                                             onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="quantity..">
                                                             <small id="quantity-small" class="text-danger"></small>
@@ -588,7 +567,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="val-price">Edit price</span>
                                                         </label>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-12">
                                                             <input type="number" min="0" class="form-control" id="val-new-price" name="val-new-price"
                                                             onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="price..">
                                                             <small id="price-small" class="text-danger"></small>
@@ -597,7 +576,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="val-offer">Edit Offer
                                                         </label>
-                                                        <div class="col-lg-6 input-group">
+                                                        <div class="col-lg-12 input-group">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text" style="background-color: #6A5ACD; color: white;">%</span>
                                                             </div>
@@ -606,19 +585,19 @@
                                                             
                                                         </div>
                                                         <div class="col-lg-4"></div>
-                                                        <div class="col-lg-6"><small id="new-offer-small" class="text-danger"></small></div>
+                                                        <div class="col-lg-12"><small id="new-offer-small" class="text-danger"></small></div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="val-description">Edit description
                                                         </label>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-12">
                                                             <textarea class="form-control" id="val-new-description" name="val-new-description" rows="5" placeholder="description.."></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="val-img">Edit image</span>
                                                         </label>
-                                                        <div class="col-lg-6">
+                                                        <div class="col-lg-12">
                                                             <input type="file" class="form-control" id="val-new-img" name="val-new-img">
                                                             <small id="new-image-small" class="text-danger"></small>
                                                         </div>
@@ -693,6 +672,7 @@
         $('#a-item').hide();
         $('#e-item').hide();
     })
+
     $('#home-item-link').click(function(){
         $('#sh-items').show();
         $('#a-item').hide();
@@ -702,16 +682,19 @@
         $('#all-text').text('All Items');
         ri();
     })
+
     $('#add-item-link').click(function(){
         $('#sh-items').hide();
         $('#a-item').show();
         $('#e-item').hide();
     })
+
     $('#update-item-link').click(function(){
         $('#sh-items').hide();
         $('#a-item').hide();
         $('#e-item').show();
     })
+    
     function ri() {
     if (window.XMLHttpRequest) {
         ajax = new XMLHttpRequest();
@@ -849,6 +832,7 @@ $(document).ready(function() {
     ajax.open("get", "phpFiles/getCategory.php");
     ajax.send();
 });
+
 $(document).ready(function(){
     $('#div_products').hide();
 });

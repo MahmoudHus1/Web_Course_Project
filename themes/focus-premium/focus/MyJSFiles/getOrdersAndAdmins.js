@@ -12,7 +12,6 @@ $(document).ready(function(){
         var location;
         var date;
         var total_charge;
-        var status;
         if (xhr.readyState === 4 && xhr.status === 200) {
             // Print received data from server
             console.log(this.responseText);
@@ -28,7 +27,6 @@ $(document).ready(function(){
                     var details = myObj[i].details;
                     date = myObj[i].date;
                     total_charge = myObj[i].total_charge;
-                    status = myObj[i].status;
                     $("#order-table").append('<tr>'
                     +'<td>'+name+'</td>'
                     +'<td>'+phone+'</td>'
@@ -36,7 +34,6 @@ $(document).ready(function(){
                     +'<td>'+details+'</td>'
                     +'<td>'+total_charge+'</td>'
                     +'<td>'+date+'</td>'
-                    +'<td>'+status+'</td>'
                     +'</tr>');
                     i++;
                     length--;

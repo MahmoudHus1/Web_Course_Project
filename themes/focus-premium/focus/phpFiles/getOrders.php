@@ -2,12 +2,11 @@
 include "DBconnection.php";
 
 $i = 0;
-$sql = 'SELECT c.name,c.phone_number,o.location,o.date,o.total_charge,ds.status,o.ID  FROM customer AS c 
-INNER JOIN orders AS o ON o.customer_ID = c.ID
-INNER JOIN delivery_status AS ds ON o.status_ID = ds.ID;';
+$sql = 'SELECT c.name,c.phone_number,o.location,o.date,o.total_charge,o.ID  FROM customer AS c 
+INNER JOIN orders AS o ON o.customer_ID = c.ID;';
 $res = $conn -> prepare($sql);
 $res -> execute();
-$res -> bind_result($name,$phone,$location,$date,$total_charge,$status,$order_ID);
+$res -> bind_result($name,$phone,$location,$date,$total_charge,$order_ID);
 $res -> store_result();
 
 if ($conn -> error) {
@@ -23,7 +22,6 @@ else {
             $json['location'] = $location;
             $json['date'] = $date;
             $json['total_charge'] = $total_charge;
-            $json['status'] = $status;
             $json['order_id'] = $order_ID;
             
             $sql1 = 'SELECT CONCAT(i.name,"(",od.quantity,")"),od.order_ID FROM order_details AS od

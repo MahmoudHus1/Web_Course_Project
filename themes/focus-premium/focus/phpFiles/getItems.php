@@ -6,7 +6,7 @@ $sql = 'SELECT * FROM items';
 $res = $conn -> prepare($sql);
 $res -> execute();
 $res -> bind_result($ID,$name,$description,$sold_out,$cat_ID,$sub_cat_name,$brand_ID,$price
-,$img,$img2,$img3,$img4,$created_at,$status);
+,$img,$img2,$img3,$img4,$created_at,$status,$quantity);
 $res -> store_result();
 
 if ($conn -> error) {
@@ -31,6 +31,7 @@ else {
             $json['img4'] = $img4;
             $json['created_at'] = $created_at;
             $json['status'] = $status;
+            $json['quantity'] = $quantity;
             $arr[$i] = $json;
             $i++;
         }

@@ -1,3 +1,3 @@
 <?php
-echo "<h1>"."omar"."</h1>";
+echo "<h1>"."Mahmoud"."</h1>";
 ?>
